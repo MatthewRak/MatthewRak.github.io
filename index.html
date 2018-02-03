@@ -91,7 +91,7 @@
 
       function add_g (val) {
       	$('#amount_g_cur').val(parseInt($('#amount_g_cur').val()) + val);
-	var g_left = paseInt($('#amount_g').val()) - paseInt($('#amount_g_cur').val());
+      	$('#amount_g_left').val(parseInt($('#amount_g').val()) - parseInt($('#amount_g_cur').val()));
       }
 
     </script>
