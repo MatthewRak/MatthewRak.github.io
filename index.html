@@ -38,7 +38,7 @@
 		</div>
   	  	<h2>GOLD</h2>
   	  	<div class="form-group">
-  	  		<label for="amount_g">GOLD:</label>
+  	  		<label for="amount_g">GOAL:</label>
 			<font color="black">
   	  		<input type="number" name="amount_g" id="amount_g" value="5980" readonly />
 			<font color="white">
@@ -78,9 +78,9 @@
       	$('#amount_lum').val(450);
       	$('#amount_lum_cur').val(0);
       	$('#amount_lum_left').val("75 Stumps");
-      	$('#amount_g').val(300);
+      	$('#amount_g').val(5980);
       	$('#amount_g_cur').val(300);
-      	$('#amount_g_left').val(5680);
+      	$('#amount_g_left').val(5980);
       }
 
       function add_lum (val) {
@@ -91,7 +91,8 @@
 
       function add_g (val) {
       	$('#amount_g_cur').val(parseInt($('#amount_g_cur').val()) + val);
-      	$('#amount_g_left').val(parseInt($('#amount_g').val()) - parseInt($('#amount_g_cur').val()));
+	var g_left = parseInt($('#amount_g').val()) - parseInt($('#amount_g_cur').val());
+      	$('#amount_g_left').val(Math.floor(g_left);
       }
 
     </script>
