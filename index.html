@@ -40,7 +40,7 @@
   	  	<div class="form-group">
   	  		<label for="amount_g">GOLD:</label>
 			<font color="black">
-  	  		<input type="number" name="amount_g" id="amount_g" value="300" readonly />
+  	  		<input type="number" name="amount_g" id="amount_g" value="5980" readonly />
 			<font color="white">
   	  	</div>
   	  	<div class="form-group">
@@ -68,7 +68,7 @@
   	  		<img src="/images/Berry.png" onclick="add_g(40)" />
 		</div>
 		<div class="form-group">
-  	  		<img src="/images/Berry.png" onclick="add_g(30)" />
+  	  		<img src="/images/Edible.png" onclick="add_g(30)" />
 		</div>
 		  </div>
     
@@ -91,6 +91,7 @@
 
       function add_g (val) {
       	$('#amount_g_cur').val(parseInt($('#amount_g_cur').val()) + val);
+	var g_left = paseInt($('#amount_g').val()) - paseInt($('#amount_g_cur').val());
       }
 
     </script>
