@@ -8,81 +8,70 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   
-  <body style="margin-top:10px; align=left; background-color:black;">
-	<font color="white">
-	  
-	  <div class="col-xs-5 col-xs-offset-1">
-
+  <body style="margin-top:20px; color:white; background-color:black" align="center">
   	<button class="btn btn-danger btn-lg" onclick="clear_all()">RESET VALUES</button>
   	<br/><br/>
+  	<div class="row" align="center">
+  	  <div class="col-xs-7 col-sm-4 col-md-3">
   	  	<h2>LUMBER</h2>
   	  	<div class="form-group">
-  	  		<label for="amount_lum">GOAL:</label>
-  	  		<font color="black">
-			<input type="number" name="amount_lum" id="amount_lum" value="450" readonly />
-			<font color="white">
+  	  	  <label for="amount_lum">GOAL:</label>
+  	  	  <input type="number" name="amount_lum" id="amount_lum" value="450" readonly />
   	  	</div>
   	  	<div class="form-group">
-  	  		<label for="amount_lum_cur">CUR:</label>
-			<font color="black">
-  	  		<input type="number" name="amount_lum_cur" id="amount_lum_cur" value="0" readonly />
-			<font color="white">
+  	  	  <label for="amount_lum_cur">CUR:</label>
+  	  	  <input type="number" name="amount_lum_cur" id="amount_lum_cur" value="0" readonly />
   	  	</div>
   	  	<div class="form-group">
-  	  		<label for="amount_lum_left">LEFT:</label>
-			<font color="black">
-  	  		<input type="text" name="amount_lum_left" id="amount_lum_left" value="75 Stumps" readonly />
-			<font color="white">
-		<div class="row">
-		<div class="col-xs-2">
-  	  		<img src="/images/HM64_Axe_Silver.png" onclick="add_lum(6)" />
-		</div>
-		<div class="col-xs-2">
-  	  		<img src="/images/AxeX7.png" onclick="add_lum(42)" />
-		</div>
-		</div>
+  	  	  <label for="amount_lum_left">LEFT:</label>
+  	  	  <input type="text" name="amount_lum_left" id="amount_lum_left" value="75 Stumps" readonly />
+  	  	</div>
+  	  	<div class="row">
+  	  	  <div class="col-xs-4">
+  	  	  	<img src="/images/HM64_Axe_Silver.png" onclick="add_lum(6)" />
+  	  	  </div>
+  	  	  <div class="col-xs-4">
+  	  	  	<img src="/images/HM64_Axe_Silver_Seven.jpg" onclick="add_lum(42)" />
+  	  	  </div>
+  	  	</div>
+  	  	
   	  	<h2>GOLD</h2>
   	  	<div class="form-group">
-  	  		<label for="amount_g">GOAL:</label>
-			<font color="black">
-  	  		<input type="number" name="amount_g" id="amount_g" value="5980" readonly />
-			<font color="white">
+  	  	  <label for="amount_g">GOLD:</label>
+  	  	  <input type="number" name="amount_g" id="amount_g" value="5000" readonly />
   	  	</div>
   	  	<div class="form-group">
-  	  		<label for="amount_g_cur">CUR:</label>
-			<font color="black">
-  	  		<input type="number" name="amount_g_cur" id="amount_g_cur" value="300" readonly />
-			<font color="white">
+  	  	  <label for="amount_g_cur">CUR:</label>
+  	  	  <input type="number" name="amount_g_cur" id="amount_g_cur" value="0" readonly />
   	  	</div>
   	  	<div class="form-group">
-  	  		<label for="amount_g_left">LEFT:</label>
-			<font color="black">
-  	  		<input type="number" name="amount_g_left" id="amount_g_left" value="5680" readonly />
-			<font color="white">
+  	  	  <label for="amount_g_left">LEFT:</label>
+  	  	  <input type="number" name="amount_g_left" id="amount_g_left" value="5000" readonly />
   	  	</div>
-		<div class="row">
-			<div class="col-xs-2">
-				<img src="/images/Medicinal.png" onclick="add_g(70)" />
-			</div>
-			<div class="col-xs-2">
-				<img src="/images/Berry.png" onclick="add_g(40)" />
-			</div>
-			<div class="col-xs-2">
-				<img src="/images/Edible.png" onclick="add_g(30)" />
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-2">
-				<img src="/images/LargeFish.png" onclick="add_g(180)" />
-			</div>
-			<div class="col-xs-2">
-				<img src="/images/MediumFish.png" onclick="add_g(100)" />
-			</div>
-			<div class="col-xs-2">
-				<img src="/images/FF.png" onclick="add_g(430)" />
-			</div>
-		</div>
-		  </div>
+  	  	<div class="row" style="margin-bottom:10px">
+  	  	  <div class="col-xs-4">
+  	  	  	<img src="/images/HM64_Edible_Herbs.png" onclick="add_g(30)" />
+  	  	  </div>
+  	  	  <div class="col-xs-4">
+  	  	  	<img src="/images/HM64_Veryberry_Fruit.png" onclick="add_g(30)" />
+  	  	  </div>
+  	  	  <div class="col-xs-4">
+  	  	  	<img src="/images/HM64_Medicinal_Herbs.png" onclick="add_g(30)" />
+  	  	  </div>
+  	  	</div>
+  	  	<div class="row" id="karen">
+  	  	  <div class="col-xs-4">
+  	  	  	<img src="/images/HM64_Big_Fish.png" onclick="add_g(180)" />
+  	  	  </div>
+  	  	  <div class="col-xs-4">
+  	  	  	<img src="/images/HM64_Fish.png" onclick="add_g(100)" />
+  	  	  </div>
+  	  	  <div class="col-xs-4">
+  	  	  	<img src="/images/HM64_FF.jpg" onclick="add_g(430)" />
+  	  	  </div><br/>
+  	  	</div>
+	  </div>
+	</div>
     
     <script>
 
