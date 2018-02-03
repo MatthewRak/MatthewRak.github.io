@@ -16,20 +16,14 @@
   
   <body style="margin-top:20px; color:white; background-color:black" align="center">
   	<div class="row">
-  	  <div class="col-xs-1">
-  	  	<img src="/images/girls/Ann.png" id="girl_1" style="width:100%;border:2px solid black" onclick="change_girl(1)" />
-  	  </div>
-  	  <div class="col-xs-1">
-  	  	<img src="/images/girls/Elli.png" id="girl_2" style="width:100%;border:2px solid black" onclick="change_girl(2)" />
-  	  </div>
-  	  <div class="col-xs-1">
-  	  	<img src="/images/girls/Karen.png" id="girl_3" style="width:100%;border:2px solid red" onclick="change_girl(3)" />
-  	  </div>
-  	  <div class="col-xs-1">
-  	  	<img src="/images/girls/Maria.png" id="girl_4" style="width:100%;border:2px solid black" onclick="change_girl(4)" />
-  	  </div>
-  	  <div class="col-xs-1">
-  	  	<img src="/images/girls/Popuri.png" id="girl_5" style="width:100%;border:2px solid black" onclick="change_girl(5)" />
+  	  <div class="col-xs-7 col-sm-4 col-md-3">
+  	  	  	<img src="/images/girls/Ann.png" id="girl_1" style="border:2px solid black" onclick="change_girl(1)" />
+  	  	  	<img src="/images/girls/Elli.png" id="girl_2" style="border:2px solid black" onclick="change_girl(2)" />
+  	  	  	<img src="/images/girls/Karen.png" id="girl_3" style="border:2px solid red" onclick="change_girl(3)" />
+  	  		<img src="/images/girls/Maria.png" id="girl_4" style="border:2px solid black" onclick="change_girl(4)" />
+  	  		<img src="/images/girls/Popuri.png" id="girl_5" style="border:2px solid black" onclick="change_girl(5)" />
+  	  	  </div>
+  	  	</div>
   	  </div>
   	</div>
   	<br/>
@@ -40,10 +34,14 @@
   	<div class="row" align="center">
   	  <div class="col-xs-7 col-sm-4 col-md-3">
   	  	<h2>LUMBER</h2>
+  	  	
+  	  	<input type="hidden" name="amount_lum" id="amount_lum" value="450" readonly />
+<!-- Is the goal really necessary?
   	  	<div class="form-group">
   	  	  <label for="amount_lum">GOAL:</label>
   	  	  <input type="number" name="amount_lum" id="amount_lum" value="450" readonly />
   	  	</div>
+-->
   	  	<div class="form-group">
   	  	  <label for="amount_lum_cur">CUR:</label>
   	  	  <input type="number" name="amount_lum_cur" id="amount_lum_cur" value="0" readonly />
@@ -60,10 +58,14 @@
   	  	</div>
   	  	
   	  	<h2>GOLD</h2>
+  	  	
+  	  	<input type="hidden" name="amount_g" id="amount_g" value="5980" readonly />
+<!-- Is the goal really necessary?
   	  	<div class="form-group">
   	  	  <label for="amount_g">GOLD:</label>
   	  	  <input type="number" name="amount_g" id="amount_g" value="5980" readonly />
   	  	</div>
+-->
   	  	<div class="form-group">
   	  	  <label for="amount_g_cur">CUR:</label>
   	  	  <input type="number" name="amount_g_cur" id="amount_g_cur" value="300" readonly />
@@ -79,12 +81,47 @@
   	  	  	<img src="/images/Medicinal.png" onclick="add_g(70)" />
   	  	  </div>
   	  	</div>
-  	  	<div class="row" id="buttons_3"> <!-- Karen only -->
+  	  	<div class="row">
   	  	  <div class="col-xs-12">
   	  	  	<img src="/images/LargeFish.png" onclick="add_g(180)" />
   	  	  	<img src="/images/MediumFish.png" onclick="add_g(100)" />
   	  	  	<img src="/images/FF.png" onclick="add_g(430)" />
-  	  	  </div><br/>
+  	  	  </div>
+  	  	</div>
+  	  	<div class="row" id="buttons_1"> <!-- Ann only -->
+  	  	  <div class="col-xs-12">
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  </div>
+  	  	</div>
+  	  	<div class="row" id="buttons_2"> <!-- Elli only -->
+  	  	  <div class="col-xs-12">
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  </div>
+  	  	</div>
+  	  	<div class="row" id="buttons_3"> <!-- Karen only -->
+  	  	  <div class="col-xs-12">
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  </div>
+  	  	</div>
+  	  	<div class="row" id="buttons_4"> <!-- Maria only -->
+  	  	  <div class="col-xs-12">
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  </div>
+  	  	</div>
+  	  	<div class="row" id="buttons_5"> <!-- Popuri only -->
+  	  	  <div class="col-xs-12">
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  </div>
   	  	</div>
 	  </div>
 	</div>
@@ -92,6 +129,7 @@
     <script>
     
       function change_girl(val) {
+      	clear_all();
       	$('#girl_1').css('border', '2px solid black');
       	$('#girl_2').css('border', '2px solid black');
       	$('#girl_3').css('border', '2px solid black');
