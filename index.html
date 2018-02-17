@@ -17,13 +17,12 @@
   <body style="margin-top:20px; color:white; background-color:black" align="center">
   	<div class="row">
   	  <div class="col-xs-7 col-sm-4 col-md-3">
-  	  	  	<img src="/images/girls/Ann.png" id="girl_1" style="border:2px solid black" onclick="change_girl(1)" />
-  	  	  	<img src="/images/girls/Elli.png" id="girl_2" style="border:2px solid black" onclick="change_girl(2)" />
-  	  	  	<img src="/images/girls/Karen.png" id="girl_3" style="border:2px solid red" onclick="change_girl(3)" />
-  	  		<img src="/images/girls/Maria.png" id="girl_4" style="border:2px solid black" onclick="change_girl(4)" />
-  	  		<img src="/images/girls/Popuri.png" id="girl_5" style="border:2px solid black" onclick="change_girl(5)" />
-  	  	  </div>
-  	  	</div>
+  	 	<img src="/images/girls/Ann.png" id="girl_1" style="border:2px solid black" onclick="change_girl(1)" />
+  	  	<img src="/images/girls/Elli.png" id="girl_2" style="border:2px solid black" onclick="change_girl(2)" />
+  	  	<img src="/images/girls/Karen.png" id="girl_3" style="border:2px solid red" onclick="change_girl(3)" />
+  	 	<img src="/images/girls/Maria.png" id="girl_4" style="border:2px solid black" onclick="change_girl(4)" />
+  	  	<img src="/images/girls/Popuri.png" id="girl_5" style="border:2px solid black" onclick="change_girl(5)" />
+  	  	<img src="/images/camera.png" id="girl_6" style="border:2px solid black; width:75px; height:75px" onclick="change_girl(6)" />
   	  </div>
   	</div>
   	<br/>
@@ -33,15 +32,25 @@
   	<br/>
   	<div class="row" align="center">
   	  <div class="col-xs-7 col-sm-4 col-md-3">
+
+		<div id="buttons_6" style="display:none">
+		  <h2>GAT</h2>
+  	  	  <input type="hidden" name="amount_gat" id="amount_gat" value="0" readonly />
+  	  	  <div class="form-group">
+  	  	    <label for="amount_gat_cur">CUR:</label>
+  	  	  	<input type="number" name="amount_gat_cur" id="amount_gat_cur" value="0" readonly />
+  	  	  </div>
+  	  	  <div class="row">
+  	  	    <div class="col-xs-12">
+  	  	  	  <img src="/images/jar_1.jpg" onclick="add_gat(1)" />
+  	  	  	  <img src="/images/jar_2.jpg" onclick="add_gat(2)" />
+  	  	  	  <img src="/images/jar_3.jpg" onclick="add_gat(3)" />
+  	  	    </div>
+  	  	  </div>
+		</div> 
+
   	  	<h2>LUMBER</h2>
-  	  	
   	  	<input type="hidden" name="amount_lum" id="amount_lum" value="450" readonly />
-<!-- Is the goal really necessary?
-  	  	<div class="form-group">
-  	  	  <label for="amount_lum">GOAL:</label>
-  	  	  <input type="number" name="amount_lum" id="amount_lum" value="450" readonly />
-  	  	</div>
--->
   	  	<div class="form-group">
   	  	  <label for="amount_lum_cur">CUR:</label>
   	  	  <input type="number" name="amount_lum_cur" id="amount_lum_cur" value="0" readonly />
@@ -56,16 +65,9 @@
   	  	  	<img src="/images/AxeX7.png" onclick="add_lum(42)" />
   	  	  </div>
   	  	</div>
-  	  	
+
   	  	<h2>GOLD</h2>
-  	  	
   	  	<input type="hidden" name="amount_g" id="amount_g" value="5980" readonly />
-<!-- Is the goal really necessary?
-  	  	<div class="form-group">
-  	  	  <label for="amount_g">GOLD:</label>
-  	  	  <input type="number" name="amount_g" id="amount_g" value="5980" readonly />
-  	  	</div>
--->
   	  	<div class="form-group">
   	  	  <label for="amount_g_cur">CUR:</label>
   	  	  <input type="number" name="amount_g_cur" id="amount_g_cur" value="300" readonly />
@@ -125,9 +127,9 @@
   	  	</div>
 	  </div>
 	</div>
-    
+
     <script>
-    
+
       function change_girl(val) {
       	clear_all();
       	$('#girl_1').css('border', '2px solid black');
@@ -135,6 +137,7 @@
       	$('#girl_3').css('border', '2px solid black');
       	$('#girl_4').css('border', '2px solid black');
       	$('#girl_5').css('border', '2px solid black');
+      	$('#girl_6').css('border', '2px solid black');
       	
       	$('#girl_' + val).css('border', '2px solid red');
       	
@@ -143,6 +146,7 @@
       	$("#buttons_3").hide();
       	$("#buttons_4").hide();
       	$("#buttons_5").hide();
+      	$("#buttons_6").hide();
       	
       	$("#buttons_" + val).show();
       }
@@ -154,6 +158,8 @@
       	$('#amount_g').val(5980);
       	$('#amount_g_cur').val(300);
       	$('#amount_g_left').val(5680);
+      	$('#amount_gat_left').val(2494);
+      	$('#amount_gat_cur').val(0);
       }
 
       function add_lum (val) {
@@ -165,6 +171,11 @@
       function add_g (val) {
       	$('#amount_g_cur').val(parseInt($('#amount_g_cur').val()) + val);
       	$('#amount_g_left').val(parseInt($('#amount_g').val()) - parseInt($('#amount_g_cur').val()));
+      }
+      
+      function add_gat (val) {
+      	$('#amount_gat_cur').val(parseInt($('#amount_gat_cur').val()) + val);
+      	$('#amount_gat_left').val(parseInt($('#amount_gat').val()) - parseInt($('#amount_gat_cur').val()));
       }
 
     </script>
