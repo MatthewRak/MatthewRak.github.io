@@ -23,6 +23,7 @@
   	 	<img src="/images/girls/Maria.png" id="girl_4" style="border:2px solid black" onclick="change_girl(4)" />
   	  	<img src="/images/girls/Popuri.png" id="girl_5" style="border:2px solid black" onclick="change_girl(5)" />
   	  	<img src="/images/camera.png" id="girl_6" style="border:2px solid black; width:75px; height:75px" onclick="change_girl(6)" />
+		<img src="/images/demoPhotos.png" id="girl_7" style="border:2px solid black; width:75px; height:75px" onclick="change_girl(7)" />
   	  </div>
   	</div>
   	<br/>
@@ -33,6 +34,20 @@
   	<div class="row" align="center">
   	  <div class="col-xs-7 col-sm-4 col-md-3">
 
+		<div id="demo_photos_only" style="display:none">
+  	  	  <div class="row" style="margin-bottom:3px">
+  	  	    <div class="col-xs-3">
+  	  	  	  <img style="width:60px" src="/images/villagers/KentStuPastor.png" onclick="add_aff(1,6)" /><br>
+  	  	  	  <input id="villager_1" type="text" style="width:60px" value="0" readonly />
+  	  	  	</div><div class="col-xs-3">
+  	  	  	  <img style="width:60px" src="/images/villagers/Rick.png" onclick="add_aff(2,6)" />
+  	  	  	  <input id="villager_2" type="text" style="width:60px" value="0" readonly />
+  	  	  	</div><div class="col-xs-3">
+  	  	  	  <img style="width:60px" src="/images/villagers/Cliff.png" onclick="add_aff(3,10)" />
+  	  	  	  <input id="villager_3" type="text" style="width:60px" value="0" readonly />
+  	  	  	</div>
+  	  	  </div>
+	  
 		<div id="photos_only" style="display:none">
   	  	  <div class="row" style="margin-bottom:3px">
   	  	    <div class="col-xs-3">
@@ -181,6 +196,13 @@
   	  	  	<img src="/images/Chicken_Sell.jpg" style="width:60px;height:60px" onclick="add_g(500)" />
   	  	  </div>
   	  	</div>
+		<div class="row" id="buttons_7"> <!-- Demo Photos only-->
+  	  	  <div class="col-xs-12">
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  	<img src="" onclick="add_g(0)" />
+  	  	  </div>
+  	  	</div>
   	  	</div>
   	  	
 	  </div>
@@ -189,7 +211,7 @@
     <script>
     
       $(function(){
-      	change_girl(3);
+      	change_girl(7);
       })
 
       function change_girl(val) {
@@ -200,6 +222,7 @@
       	$('#girl_4').css('border', '2px solid black');
       	$('#girl_5').css('border', '2px solid black');
       	$('#girl_6').css('border', '2px solid black');
+      	$('#girl_7').css('border', '2px solid black');
       	
       	$('#girl_' + val).css('border', '2px solid red');
       	
@@ -209,18 +232,28 @@
       	$("#buttons_4").hide();
       	$("#buttons_5").hide();
       	$("#buttons_6").hide();
+      	$("#buttons_7").hide();
       	
       	$("#buttons_" + val).show();
       	
-      	$("#lumber").show();
+      	if (val < 6) {
+		$("#lumber").show();
+		$("#gold").show();
       	$("#marriage_only").show();
-      	$("#photos_only").hide();
+		$("#photos_only").hide();
+		}
       	if (val == 6) {
       	  $("#photos_only").show();
       	  $("#lumber").hide();
       	  $("#marriage_only").hide();
       	  $('#amount_g').val(81800);
       	  $('#amount_g_left').val(81500);
+      	}
+		if (val == 7) {
+		  $("#photos_only").hide();
+      	  $("#demo_photos_only").show();
+		  $("#lumber").hide();
+		  $("#gold").hide();
       	}
       }
 
@@ -232,7 +265,7 @@
       	$('#amount_g_cur').val(300);
       	$('#amount_g_left').val(5680);
       	$('#amount_hap_cur').val(0);
-      	for (var x = 1; x < 7; x++) {
+      	for (var x = 1; x < 8; x++) {
       	  $('#villager_' + x).val(0);
       	}
       }
