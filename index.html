@@ -237,12 +237,14 @@
       	$("#buttons_" + val).show();
       	
       	if (val < 6) {
+		$("demo_photos_only").hide();
 		$("#lumber").show();
 		$("#gold").show();
       	$("#marriage_only").show();
 		$("#photos_only").hide();
 		}
       	if (val == 6) {
+		  $("demo_photos_only").hide();
       	  $("#photos_only").show();
       	  $("#lumber").hide();
       	  $("#marriage_only").hide();
