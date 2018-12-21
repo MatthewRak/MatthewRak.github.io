@@ -1,12 +1,12 @@
 body {
-  max-width: 900px;
+  max-width: 400px;
   margin: auto;
   font-size: 14px;
   font-family: helvetica;
 }
 
 .drag-drop-header {
-  height: 70px;
+  height: 50px;
   width: 100%;
   background-color: #26292e;
   color: white;
@@ -16,12 +16,12 @@ body {
 .main-container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .item1 {
-  width: 100px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   margin: 5px;
   font-weight: bold;
   text-align: center;
@@ -31,8 +31,8 @@ body {
 }
 
 .item2 {
-  width: 200px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   margin: 5px;
   font-weight: bold;
   text-align: center;
@@ -43,5 +43,6 @@ body {
 
 .dragging-over {
   background-color: #ECF7FB;
-  height: 140px;
+  width: 85px;
+  height: 85px;
 }
