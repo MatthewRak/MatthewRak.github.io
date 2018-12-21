@@ -1,54 +1,46 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Harvest Moon 64 Affection Tracker</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Default functionality</title>
+  <link rel="stylesheet" href="jquery-ui-1.12.1\jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 120px; height: 200px; }
+  #sortable li { margin: 0 0 0 0; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 80px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+</head>
+<body>
+ 
+<ul id="sortable">
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+  <img src="images\girls\Ann.png">
+  </li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+  <img src="images\girls\Elli.png">
+  </li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+  <img src="images\girls\Karen.png">
+  </li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+  <img src="images\girls\Maria.png">
+  </li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+  <img src="images\girls\Popuri.png">
+  </li>
 
-  <body>
-    <div class="drag-drop-header">
-      <h2>Harvest Moon 64 Affection Tracker</h2>
-    </div>
-
-    <div class="main-container">
-
-      <div class="item1"
-        draggable="true"
-        ondragstart="handleDragStart(event)"
-        >
-        <img src="images\Egg.png">
-      </div>
-      <div
-        class="item2"
-        ondragover="allowDrop(event)"
-        ondrop="handleDrop()"
-        ondragenter="colorize(this)"
-        ondragleave="uncolorize(this)"
-        >
-        <img src="images\girls\Elli.png">
-      </div>
-
-    </div>
-
-    <script>
-      allowDrop = (event) => {
-        event.preventDefault();
-      }
-      handleDragStart = (event) => {
-        event.dataTransfer.setData("text", 'this is the value of the dragged data');
-        console.log('Started Dragging !');
-      }
-      handleDrop = () => {
-        console.log('Drop !');
-        alert('Drop !');
-      }
-      colorize = (element) => {
-        element.classList.add('dragging-over');
-      }
-      uncolorize = (element) => {
-        element.classList.remove('dragging-over');
-      }
-    </script>
-  </body>
+</ul>
+ 
+ 
+</body>
 </html>
